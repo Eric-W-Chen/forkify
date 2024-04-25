@@ -1,11 +1,11 @@
-import * as model from './model';
+import * as model from "./model";
 //We can immediately import the views as we are exporting a singular instance of the class object already (singleton pattern), one benefit is that we don't have to instantiate the object ourselves.
-import RecipeView from './views/RecipeView';
-import SearchView from './views/SearchView';
-import ResultsView from './views/ResultsView';
-import PaginationView from './views/PaginationView';
-import BookmarksView from './views/BookmarksView';
-import AddRecipeView from './views/AddRecipeView';
+import RecipeView from "./views/RecipeView";
+import SearchView from "./views/SearchView";
+import ResultsView from "./views/ResultsView";
+import PaginationView from "./views/PaginationView";
+import BookmarksView from "./views/BookmarksView";
+import AddRecipeView from "./views/AddRecipeView";
 
 //One big module for all the controllers
 
@@ -27,10 +27,10 @@ import AddRecipeView from './views/AddRecipeView';
 //Now, icons will be the path to the new icons file in the 'dist' folder. Everytime we referred to the previous icons path, we will now use the icons variable instead which contains the path of our new icons file
 
 //Polyfilling to ensure that most old browsers are supported by our application. We could pick which features we want to polyfill, and only import those specific features but let's just polyfill everything.
-import 'core-js/stable'; //Polyfilling all other features except async/await.
-import 'regenerator-runtime'; //Polyfilling async/await
-import BookmarksView from './views/BookmarksView';
-import { MODAL_CLOSE_SEC } from './config';
+import "core-js/stable"; //Polyfilling all other features except async/await.
+import "regenerator-runtime"; //Polyfilling async/await
+import BookmarksView from "./views/BookmarksView";
+import { MODAL_CLOSE_SEC } from "./config";
 
 // https://forkify-api.herokuapp.com/v2
 
@@ -74,7 +74,7 @@ const controlRecipes = async function () {
     //3. Rendering Recipe
     RecipeView.render(model.state.recipe);
   } catch (err) {
-    console.log('here');
+    console.log("here");
     RecipeView.renderError();
   }
 };
@@ -191,7 +191,7 @@ const controlAddRecipe = async function (newRecipe) {
     //The window would be in the section that displayed/stylized our form, our success message, etc and the overlay would be in the section that displayed/stylized our background.
 
     //Remember that we also need to update our URL to point to our new uploaded recipe's ID so that if we reload the page, we will remain on the newly uploaded recipe's page
-    window.history.pushState(null, '', `#${model.state.recipe.id}`); //We use the history API in our browser and use the pushState method which allows us to change our URL without reloading the page
+    window.history.pushState(null, "", `#${model.state.recipe.id}`); //We use the history API in our browser and use the pushState method which allows us to change our URL without reloading the page
     //History API allows manipulation of the browser session history, meaning the pages visited in the tab or frame that the current page is loaded in
 
     /* 
@@ -264,6 +264,7 @@ const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   PaginationView.addHandlerClick(controlPagination);
   AddRecipeView.addHandlerUpload(controlAddRecipe);
+  console.log("done");
 };
 
 init(); //initialize everything that needs to be initialized when starting our program

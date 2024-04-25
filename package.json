@@ -5,7 +5,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel ./starter/index.html",
-    "build": "parcel build ./starter/index.html --dist-dir ./dist"
+    "build": "parcel build ./index.html --dist-dir ./dist"
   },
   "author": "Eric Chen",
   "license": "ISC",
