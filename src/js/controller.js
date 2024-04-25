@@ -264,7 +264,6 @@ const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   PaginationView.addHandlerClick(controlPagination);
   AddRecipeView.addHandlerUpload(controlAddRecipe);
-  console.log("done");
 };
 
 init(); //initialize everything that needs to be initialized when starting our program
